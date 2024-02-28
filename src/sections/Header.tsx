@@ -1,4 +1,3 @@
-import { useState } from "react";
 import TopHeader from "./TopHeader";
 
 export default function Header() {
