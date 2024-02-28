@@ -43,10 +43,11 @@ export const PersonalData = [
     ),
     description: (
       <div className="opacity-40 text-[13.3px] flex flex-col gap-2">
-        <p> - Ranked 12/130 in ITholic Contest 2023 at ENSIAS.</p>
+        <p> - Ranked 14/59 in the final contest of MNPC 23 at UM6P - BENGUERIR</p>
+        <p> - Ranked 7 in the Game Of Code contest hold at INSEA - RABAT </p>
+        <p> - Ranked 12/130 in ITholic Contest 2023 at ENSIAS - RABAT.</p>
         <p>
-          {" "}
-          - Ranked 33/90 in Moroccan National Programming Contest (MNPC) 2023.
+          - Ranked 33/90 in Moroccan National Programming Contest (MNPC) 22 - 1337 KHOURIBGA.
         </p>
         <p>
           Explore the problems I solved :{"  "}
