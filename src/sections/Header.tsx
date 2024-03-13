@@ -1,4 +1,3 @@
-import TopHeader from "./TopHeader";
 
 export default function Header() {
 
@@ -9,7 +8,9 @@ export default function Header() {
           marouane boufarouj
         </div>
         <div className="flex md:flex-row md:gap-[10rem] md:text-[13px] text-[11px] font-JB font-light">
-          <TopHeader />
+          <div>
+            <a href="https://medium.com/@grainme">blogs</a>
+          </div>
         </div>
       </div>
       <div className="max-h-fit py-4 flex justify-center items-center">
