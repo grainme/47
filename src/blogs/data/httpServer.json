@@ -1,0 +1,4 @@
+{
+  "title": "Building a Simple HTTP Server",
+  "content": "In this blog post, we'll explore how to create a basic HTTP server using Node.js. HTTP servers are fundamental to web development, allowing us to serve content and handle requests from clients.\n\nTo get started, we'll use the built-in 'http' module in Node.js. Here's a simple example:\n\nconst http = require('http');\n\nconst server = http.createServer((req, res) => {\n  res.writeHead(200, { 'Content-Type': 'text/plain' });\n  res.end('Hello, World!');\n});\n\nserver.listen(3000, () => {\n  console.log('Server running on http://localhost:3000/');\n});\n\nThis code creates a server that responds with 'Hello, World!' to all requests. It's a basic example, but it demonstrates the core concepts of creating an HTTP server in Node.js.\n\nIn future posts, we'll explore how to handle different routes, serve HTML content, and more. Stay tuned!"
+}

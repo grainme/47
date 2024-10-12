@@ -1,7 +1,19 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Blog from './blogs/httpServerBlog.tsx';
+import {useEffect} from 'react'
 
-function App() {
+function Home() {
+  useEffect(() => {
+    const hasAlertBeenShown = localStorage.getItem('alertShown');
+    if (!hasAlertBeenShown) {
+      alert("Btw I know CSS.");
+      localStorage.setItem('alertShown', 'true');
+    }
+  }, []);
+  
   return (
-    <div style={{ fontFamily: 'Times New Roman, serif', margin: '0 auto', padding: '20px' }}>
+    <div style={{ fontFamily: 'Times New Roman, serif', margin: '0 auto', padding: '10px' }}>
       <header style={{ marginBottom: '20px' }}>
         <h1 style={{ borderBottom: '1px solid black', paddingBottom: '10px' }}>Home Page for Marouane Boufarouj</h1>
         <img
@@ -17,12 +29,7 @@ function App() {
       </p>
       <h2 style={{ padding: '10px 0' }}>Open-Source Projects by Marouane</h2>
       <ul style={{ listStyleType: 'none', paddingLeft: '0', marginLeft: '0' }}>
-        <li style={{ paddingLeft: '1em', textIndent: '-1em' }}>
-          • <a href="https://github.com/grainme/PomodoroKai" style={{ color: 'blue' }}>PomodoroKai</a>
-          : A productivity tool built using Supabase and React, helping users manage their
-          time effectively.
-        </li>
-        <li style={{ paddingLeft: '1em', textIndent: '-1em', marginTop: '0.5em' }}>
+        <li style={{ paddingLeft: '3em', textIndent: '-1em', marginTop: '0.2em' }}>
           • <a href="https://github.com/grainme?tab=repositories" style={{ color: 'blue' }}>GrainMe GitHub Projects</a>
           : Explore more of my personal open-source work on GitHub.
         </li>
@@ -37,12 +44,12 @@ function App() {
         </li>
       </ul>
       <h2 style={{ padding: '10px 0' }}>My Blog Posts</h2>
-      <ul style={{ listStyleType: 'none', paddingLeft: '0', marginLeft: '0' }}>
+      <ul style={{ listStyleType: 'none', paddingLeft: '0', marginLeft: '0', marginBottom: '0.6em' }}>
         <li style={{ paddingLeft: '3em', textIndent: '-1em' }}>
-          • <a href="#" style={{ color: 'blue' }}>Exploring the Power of Graph Algorithms in Vector Databases</a> (October 10, 2024)
+          • <Link to="/blog" style={{ color: 'blue' }}>Building a Simple HTTP Server</Link> (October 10, 2024)
         </li>
       </ul>
-      <p><a href="#" style={{ color: 'blue' }}>View all blog posts</a></p>
+      <p><a href="#" style={{ color: 'blue'}}>View all blog posts</a></p>
       <h2 style={{ padding: '10px 0' }}>Other Pages of Interest</h2>
       <ul style={{ listStyleType: 'none', paddingLeft: '0', marginLeft: '0' }}>
         <li style={{ paddingLeft: '1em', textIndent: '-1em' }}>
@@ -52,15 +59,28 @@ function App() {
           • <a href="https://linkedin.com/in/marouaneboufarouj" style={{ color: 'blue' }}>LinkedIn Profile</a>
         </li>
       </ul>
-      <footer style={{ textAlign: 'center', marginTop: '20px' }}>
-        <p style={{ fontSize: '0.8em' }}>
-          Copyright © 2024 Marouane Boufarouj |
-          <a href="mailto:boufaroujmarouan@gmail.com" style={{ color: 'blue', marginLeft: '5px' }}>
-            boufaroujmarouan@gmail.com
-          </a>
-        </p>
-      </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+        <footer style={{ textAlign: 'center', marginTop: '20px', borderTop: '1px solid black', paddingTop: '10px' }}>
+          <p style={{ fontSize: '0.8em' }}>
+             Marouane Boufarouj |
+            <a href="mailto:boufaroujmarouan@gmail.com" style={{ color: 'blue', marginLeft: '5px' }}>
+              boufaroujmarouan@gmail.com
+            </a>
+          </p>
+        </footer>
+      </div>
+    </Router>
   );
 }
 
