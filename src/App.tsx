@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Blog from './blogs/httpServerBlog.tsx';
+import Blog1 from './blogs/js101_00.tsx'
 import {useEffect} from 'react'
 
 function Home() {
@@ -45,9 +46,9 @@ function Home() {
       <h2 style={{ padding: '10px 0' }}>My Blog Posts</h2>
       <ul style={{ listStyleType: 'none', paddingLeft: '0', marginLeft: '0', marginBottom: '0.6em' }}>
         <li style={{ paddingLeft: '3em', textIndent: '-1em' }}>
-          • <Link to="/blog" style={{ color: 'blue' }}>Building a Simple HTTP Server</Link> (October 10, 2024)
+          • <Link to="/blog01" style={{ color: 'blue' }}>JS101 : Difference between Primitives and Object?</Link> (2024)
         </li>
-      </ul>
+        </ul>
       <p><a href="#" style={{ color: 'blue'}}>View all blog posts</a></p>
       <h2 style={{ padding: '10px 0' }}>Other Pages of Interest</h2>
       <ul style={{ listStyleType: 'none', paddingLeft: '0', marginLeft: '0' }}>
@@ -68,7 +69,8 @@ function App() {
       <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog00" element={<Blog />} />
+          <Route path="/blog01" element={<Blog1 />} />
         </Routes>
         <footer style={{ textAlign: 'center', marginTop: '20px', borderTop: '1px solid black', paddingTop: '10px' }}>
           <p style={{ fontSize: '0.8em' }}>
