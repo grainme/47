@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Blog from './blogs/httpServerBlog.tsx';
 import Blog1 from './blogs/js101_00.tsx'
+import Blog2 from './blogs/java101_00.tsx'
 import {useEffect} from 'react'
 
 function Home() {
@@ -48,6 +49,10 @@ function Home() {
         <li style={{ paddingLeft: '3em', textIndent: '-1em' }}>
           • <Link to="/blog01" style={{ color: 'blue' }}>JS101 : Difference between Primitives and Object?</Link> (2024)
         </li>
+        <li style={{ paddingLeft: '3em', textIndent: '-1em' }}>
+          • <Link to="/blog02" style={{ color: 'blue' }}>Java String Memory Management: Pool, Immutability, and Optimization Mechanisms</Link> (2024)
+        </li>
+   
         </ul>
       <p><a href="#" style={{ color: 'blue'}}>View all blog posts</a></p>
       <h2 style={{ padding: '10px 0' }}>Other Pages of Interest</h2>
